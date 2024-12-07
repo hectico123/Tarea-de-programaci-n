@@ -1,0 +1,25 @@
+Este sistema de autenticación en PHP se compone de dos archivos principales: login.php, que presenta el formulario de inicio de sesión, y validar_login.php, que se encarga de verificar la autenticidad del usuario.
+
+1. login.php
+Este archivo es un formulario de login que permite al usuario ingresar su nombre de usuario y contraseña para iniciar sesión en el sitio web. Al enviar el formulario, los datos son redirigidos al archivo validar_login.php, donde se procesan las credenciales.
+
+Estructura del archivo:
+
+-Se inicia una sesión con session_start(), lo que permite almacenar información del usuario en la sesión.
+
+-Se presenta un formulario HTML que solicita al usuario su nombre de usuario y contraseña.
+
+-Al enviar el formulario, se redirige a validar_login.php para procesar la autenticación.
+
+2. validar_login.php
+Este archivo es el controlador que recibe las credenciales del usuario y realiza un proceso de verificación para determinar si el nombre de usuario y la contraseña ingresadas son correctas antes de permitir el acceso al sistema. A continuación, se describen los pasos que sigue:
+
+-Conexión a la Base de Datos: Se incluye el archivo conexion.php, que establece la conexión a la base de datos donde se almacenan los usuarios y sus contraseñas.
+
+-Recepción de Datos: Se obtienen las credenciales del usuario a través de $_POST, que contiene el nombre de usuario y la contraseña ingresados en el formulario.
+
+-Verificación del Usuario: Se ejecuta una consulta SQL para buscar el usuario en la base de datos. Si el usuario no existe, se muestra un mensaje de alerta y se redirige al usuario de vuelta a index.php. Si el usuario existe, se recupera la contraseña encriptada almacenada en la base de datos.
+
+- Verificación de la Contraseña:
+
+Se utiliza la función password_verify() para comparar la contraseña ingresada por el usuario con la contraseña encriptada almacenada en la base de datos. Esta función es una medida de seguridad que protege la información del usuario mediante una comparación segura entre contraseñas. Si la contraseña es correcta, se inician las variables de sesión ($_SESSION) para almacenar información del usuario, como su nombre de usuario, ID y nombre completo. Luego, se redirige al usuario a cliente.php, donde puede acceder a su cuenta. Si la contraseña es incorrecta, se muestra un mensaje de alerta y se redirige al usuario de vuelta a index.php
