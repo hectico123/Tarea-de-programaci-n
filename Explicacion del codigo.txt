@@ -1,3 +1,14 @@
+Grupo de proyecto: 
+Barrera Wilber, C.I:31.171.958
+Capielo Andrés, C.I:31.438.035
+Coronado Héctor, C.I:31.091.199
+Guerra Jesús, C.I:31.560.351
+
+Requisitos de la comunidad: Segun la petición de la comunidad, la administración de la base de datos se solicitó con un sistema que atendiera a jerarquias, donde dependiendo del usuario que ingresara modificara una que otra cosa como lo seria el cargar información o el modificar datos dentro de las tablas. 
+
+Nosotros atendimos esa solicitud con la base de nuestra arquitectura sistematica la cual utiliza la validación y el almacenamiento de los usuarios para asignar restricciones a ciertas areas dentro del sistema dependiendo de quien sea el que entre, aunque parte de eso aun sigue sin estar listo ya habiamos planteado desde el primer momento que dependiendo de quien ingresara pudiera hacer una u otra cosa.
+
+Explicación del codigo:
 Este sistema de autenticación en PHP se compone de dos archivos principales: login.php, que presenta el formulario de inicio de sesión, y validar_login.php, que se encarga de verificar la autenticidad del usuario.
 
 1. login.php
